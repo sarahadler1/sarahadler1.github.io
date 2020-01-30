@@ -3,30 +3,34 @@ let pointX;
 let mouseDist;
 let triY;
 
+
 function setup() {
   //create the canvas element
-  createCanvas(900, 500);
+  createCanvas(1480, 1000);
 
   //giving pointX a value of 300
-  pointX = 600;
+  pointX = 740;
   triY = 300;
-  rectMode(CENTER);
   print(pointX);
 }
 
 
 
 function draw() {
-  background(168, 50, 153);
+  if(keyIsPressed){
+  background(255,255,255);
+  } else {
+  background(0,0,0);
+  }
  mouseDist = dist(mouseX, mouseY, pmouseX, pmouseY);
  print(mouseDist);
  smooth();
   //line and point styles
-  strokeWeight(50);
+  strokeWeight(1000);
   //point expects an x and y coordinate
-  point(pointX, 300);
+  point(pointX, 900);
 
-  strokeWeight(mouseDist);
+  strokeWeight(20);
   //line expects two x, y coordinates
   //then conects the coordinates
   line(mouseX, mouseY, pmouseX, pmouseY);
@@ -39,39 +43,68 @@ function draw() {
   //and width and Height
   //ellipse(mouseX, mouseY, 200, 100);
 
-  stroke(random(255), random(255), random(255));
+    stroke(random(600), random(600), random(600));
 
-  //rect styles
-  strokeWeight(mouseDist);
+    //rect styles
+    strokeWeight(10);
 
-  //fills in shapes with color
-  //affects shapes that come after
-  fill(30, 20,255);
+    //fills in shapes with color
+    //affects shapes that come after
 
-  //rect expecting an x, y coordinate
-  //and width and Height
-  rect(width/3, height/3, mouseX, 100);
+    //rect expecting an x, y coordinate
+    //and width and Height
+    triangle(width/2, height/2, mouseX, -700);
+    triangle(width/2, height/2, mouseX, -800);
+    triangle(width/2, height/2, mouseX, -900);
+    triangle(width/2, height/2, mouseX, -1000);
+
+
+
+    triangle(width/2, height/2, mouseX, -600);
+    triangle(width/2, height/2, mouseX, -500);
+    triangle(width/2, height/2, mouseX, -400);
+    triangle(width/2, height/2, mouseX, -300);
+    triangle(width/2, height/2, mouseX, -200);
+    triangle(width/2, height/2, mouseX, -100);
+    triangle(width/2, height/2, mouseX, 0);
+    triangle(width/2, height/2, mouseX, 100);
+    triangle(width/2, height/2, mouseX, 200);
+    triangle(width/2, height/2, mouseX, 300);
+    triangle(width/2, height/2, mouseX, 400);
+    triangle(width/2, height/2, mouseX, 500);
+    triangle(width/2, height/2, mouseX, 600);
+    triangle(width/2, height/2, mouseX, 700);
+    triangle(width/2, height/2, mouseX, 800);
+    triangle(width/2, height/2, mouseX, 900);
+    triangle(width/2, height/2, mouseX, 1000);
+    triangle(width/2, height/2, mouseX, 1100);
+    triangle(width/2, height/2, mouseX, 1200);
+    triangle(width/2, height/2, mouseX, 1300);
+    triangle(width/2, height/2, mouseX, 1400);
+
+
+
+
+
+
 
   //triangle syles
-  noFill();
-  strokeWeight(30);
-  stroke(120, 150, 150);
+
   //triagle expects three set of x, y
-  triangle(800, 12, 850, 200, 700, triY);
   //print(mouseX);
 
   if(mouseIsPressed){
     //when mouse is pressed reset pointx to 200
-    pointX = 200;
+    pointX = -740;
   } else {
     //when mouse is released reset pointx to 600
-    pointX = 600;
+    pointX = 740;
 
   }
 
   if(keyIsPressed){
     //when mouse is pressed reset pointx to 200
-    triY= 600;
+    triY= 800;
   } else {
     //when mouse is released reset pointx to 600
     triY = 300;
