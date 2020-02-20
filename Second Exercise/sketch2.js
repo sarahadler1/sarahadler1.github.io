@@ -11,7 +11,9 @@ let captureX;
 let captureY;
 
 
+
 function setup() {
+
   createCanvas(windowWidth, windowHeight);
   bx = 100;
   by = 100;
